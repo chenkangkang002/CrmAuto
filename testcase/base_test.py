@@ -1,9 +1,7 @@
 import time
 import unittest
-
 from model.driver import Driver
 from page.login_page import LoginPage
-
 
 class BaseTest(unittest.TestCase):
 
@@ -23,5 +21,4 @@ class BaseTest(unittest.TestCase):
         time.sleep(3)
         print('关闭浏览器')
         self.driver.quit()
-# if __name__ == '__main__':
-#     unittest.main()
+

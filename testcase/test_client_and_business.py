@@ -3,18 +3,12 @@
 '''
 from page.business_page import BusinessPage
 from page.client_page import ClientPage
-from page.login_page import LoginPage
 from testcase.base_test import BaseTest
-
 
 class ClientAndBusiness(BaseTest):
 
     def test_client_busniess1(self):
         '''新建客户——同时创建商机'''
-        lp = LoginPage(self.driver)
-        u_name = 'admin'
-        password = 'admin123'
-        retlogin = lp.login(u_name, password)
         # 实例化客户page
         cname = '王jiu九'
         value = 'name'
@@ -29,10 +23,6 @@ class ClientAndBusiness(BaseTest):
 
     def test_client_busniess2(self):
         '''新建客户——同时创建商机'''
-        lp = LoginPage(self.driver)
-        u_name = 'admin'
-        password = 'admin123'
-        retlogin = lp.login(u_name, password)
         # 实例化客户page
         cname = '王八0001'
         value = 'name'

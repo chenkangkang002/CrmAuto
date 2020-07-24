@@ -1,8 +1,8 @@
 from page.business_page import BusinessPage
 from testcase import base_test
 
-
 class BusinessTestCase(base_test.BaseTest):
+
     def test_business_add(self):
         '''添加商机流程'''
         bname = 'dqfqdqw'

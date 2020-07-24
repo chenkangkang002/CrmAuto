@@ -1,6 +1,5 @@
 from testcase.base_test import BaseTest
 
-
 class LoginTestCase(BaseTest):
 
     def test_loginfont_suss(self):
