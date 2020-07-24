@@ -10,15 +10,18 @@ class UpdateCluePage(BasePage):
     locator_assert = (By.CLASS_NAME, 'alert.alert-success')  # 断言
 
     def ele_clickupdate(self):
+        '''点击修改'''
         self.find_element(self.locator_clickupdate).click()  # 点击修改
         print("点击修改")
 
     def ele_positin(self,position):
+        '''清空并输入职位'''
         self.find_element(self.locator_positin).clear()  # 清空职位
         self.find_element(self.locator_positin).send_keys(position)  # 输入职位
         print("输入职位")
 
     def ele_save(self):
+        '''点击保存'''
         self.find_element(self.locator_save).click()  # 点击保存
         print("点击保存")
 
