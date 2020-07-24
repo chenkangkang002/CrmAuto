@@ -1,7 +1,6 @@
 import unittest
 
 from page.addclue_page import AddCluePage
-from page.login_page import LoginPage
 from page.switch_page import SwitchCluePage
 from page.updateclue_page import UpdateCluePage
 from testcase.base_test import BaseTest
