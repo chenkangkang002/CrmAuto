@@ -8,12 +8,10 @@ from testcase.base_test import BaseTest
 class UpdateClueTestCase(BaseTest):
     def test_clue(self):
         '''修改线索'''
-        login = LoginPage(self.driver)  # 实例化LoginPage类
-        u_name = 'admin'
-        password = 'admin123'
-        login.login(u_name, password)  # 调用login page的login方法
+
         addclue = AddCluePage(self.driver)  # 实例化AddCluePage类
         addclue.ele_clickclue()  # 调用AddCluePage的ele_clickclue方法
+
         update = UpdateCluePage(self.driver)  # 实例化UpdateCluePage
         position = '人事'
         text = update.ele_update(position)  # 调用UpdateCluePage的ele_update方法
