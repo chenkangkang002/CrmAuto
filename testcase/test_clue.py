@@ -19,7 +19,7 @@ class ClueTestCase(BaseTest):
         addclue.ele_addclue(contact)  # 调用AddCluePage的ele_clickclue方法
 
         update = UpdateCluePage(self.driver)  # 实例化UpdateCluePage
-        position = '人事'
+        position = 'HR'
         update.ele_update(position)  # 调用UpdateCluePage的ele_update方法
 
         switch = SwitchCluePage(self.driver)  # 实例化SwitchCluePage
