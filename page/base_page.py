@@ -38,7 +38,7 @@ class BasePage():
         :param loc: 元素定位信息
         :return: 断言文本信息
         '''
-        ret = self.find_element(loc).text
+        ret = str(self.find_element(loc).text).strip()
         return ret
 
     def select_search(self, loc, value='name'):
@@ -58,4 +58,4 @@ class BasePage():
         # 获取时间
         star_time = time.strftime('%Y%m%d_%H%M%S')
         func_name = func_name+'-'+star_time+'.png'
-        self.driver.save_screenshot(BASE_PATH+'/image/'+func_name)
+        self.driver.save_screenshot(BASE_PATH+'/report/'+func_name)

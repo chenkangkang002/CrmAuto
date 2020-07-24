@@ -28,6 +28,22 @@ class ClientPage(BasePage):
     loc_leading_cadre_search = (By.XPATH, '//*[@id="dialog-role-list"]/div/ul/button')  #搜索（选择客户负责人）
     loc_owner_radio = (By.NAME, 'owner')    #负责人勾选框
     loc_leading_cadre_submit = (By.XPATH, '/html/body/div[7]/div[3]/div/button[1]/span') #ok按钮
+    loc_view_client = (By.XPATH, '//form[@id="form1"]/table/tbody/tr[1]/td[12]/a[1]') #查看客户
+    loc_view_client_name = (By.XPATH, '//ul[@id="left_list"]/li[1]/span') #查看客户信息时的客户名称
+    loc_head_scu = (By.CLASS_NAME, 'avatar') #右上角头像
+    loc_exit_system = (By.LINK_TEXT, '退出') #退出系统
+
+    def exit_submit(self):
+        '''点击【退出】，退出系统'''
+        self.find_element(self.loc_exit_system).click()
+
+    def head_scu(self):
+        '''点击右上角头像，弹出用户操作列表'''
+        self.find_element(self.loc_head_scu).click()
+
+    def view_client(self):
+        '''点击【查看】，查看客户信息'''
+        self.find_element(self.loc_view_client).click()
 
     def client_inlet(self):
         '''客户功能入口按钮'''
@@ -71,7 +87,7 @@ class ClientPage(BasePage):
         '''保存按钮'''
         self.find_element(self.loc_preserve_submit).click()
 
-    def search_condition(self, value):
+    def search_condition(self, value='name'):
         '''筛选条件下拉框'''
         self.find_element(self.loc_search_condition).click()
         self.select_search(self.loc_search_condition, value)
@@ -123,3 +139,16 @@ class ClientPage(BasePage):
         self.leading_cadre_search()
         self.owner_radio()
         self.leading_cadre_submit()
+
+    def view_client_info(self):
+        '''查看客户信息'''
+        self.view_client()
+        ret = self.assert_result(self.loc_view_client_name)
+        self.screenshot('view_client_info')
+        return ret
+
+    def exit_system(self):
+        '''点击右上角头像，退出系统'''
+        self.head_scu()
+        self.exit_submit()
+        self.screenshot('exit_system')
