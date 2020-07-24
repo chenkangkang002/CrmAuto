@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from page.base_page import BasePage
 
 class AddCluePage(BasePage):
+    '''添加线索'''
 
     locator_clickclue = (By.LINK_TEXT, '线索')  # 线索
     locator_newcreate = (By.CSS_SELECTOR,'a.btn.btn-primary')  # 新建线索

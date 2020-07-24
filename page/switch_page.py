@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from page.addclue_page import AddCluePage
 
 class SwitchCluePage(AddCluePage):
+    '''线索转换为客户'''
     locator_switch = (By.LINK_TEXT, '转换')  # 转换
     locator_customername = (By.NAME, 'name')  # 客户名称
     locator_html = (By.TAG_NAME, "html")  # 窗口尺寸
