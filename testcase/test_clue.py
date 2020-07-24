@@ -9,10 +9,6 @@ from testcase.base_test import BaseTest
 class ClueTestCase(BaseTest):
     def test_clue(self):
         '''添加线索并修改并转换为客户'''
-        login = LoginPage(self.driver)  # 实例化LoginPage类
-        u_name = 'admin'
-        password = 'admin123'
-        login.login(u_name, password)  # 调用login page的login方法
 
         addclue = AddCluePage(self.driver)  # 实例化AddCluePage类
         contact = 'du先生'
